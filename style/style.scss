@@ -8,10 +8,15 @@ html, body {
 }
 
 h1 {
-	padding: 20px 0 60px;
+	padding: 20px 0 10px;
 }
 
-h6{
+h1 + h2 {
+	padding-bottom: 60px;
+	font-size: 20px;
+}
+
+h6 {
 	padding-bottom: 20px;
 	color: #999999 !important;
 }

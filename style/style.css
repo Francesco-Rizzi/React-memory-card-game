@@ -6,7 +6,11 @@ html, body {
   box-sizing: border-box; }
 
 h1 {
-  padding: 20px 0 60px; }
+  padding: 20px 0 10px; }
+
+h1 + h2 {
+  padding-bottom: 60px;
+  font-size: 20px; }
 
 h6 {
   padding-bottom: 20px;
