@@ -1,6 +1,6 @@
 # 🃏 React memory card game
 
-###### \[this is just an exercise\]
+###### This is just an \[🔬 experiment\].
 
 #### Description:
  A React based version of the memory card game, flip the cards over and match the pairs with the fewer attempts as possible! [try it live](http://francescorizzi.info/experiments/react-memory-card-game)
