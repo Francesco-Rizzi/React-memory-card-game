@@ -3,12 +3,13 @@ import _ from 'lodash';
 import Card from './card';
 
 const initialState = {
-	showAll  : true,
-	frozen   : false,
-	cardIds  : [],
-	matches  : {},
-	selected : [],
-	attempts : 0
+	showAll   : true,
+	frozen    : false,
+	cardIds   : [],
+	matches   : {},
+	selected  : [],
+	attempts  : 0,
+	colorSalt : 0,
 };
 
 
@@ -18,7 +19,8 @@ export default class CardContainer extends Component {
 		return (
 			<div className='cards-container row'>
 				<div className="col-xs-12">
-					<h6>-attempts: {this.state.attempts} (best: {this.props.couples})-</h6>
+					<div className='couple-input'>couples: <input type="text" placeholder={this.props.couples} /><button onClick={this.props.onCouplesChange}>change</button></div>
+					<h6>your attempts: {this.state.attempts} (best: {this.props.couples})</h6>
 				</div>
 				{this.generateCards()}
 				{(Object.keys(this.state.matches).length === this.props.couples * 2) ? this.handleWin() : null}
@@ -31,8 +33,17 @@ export default class CardContainer extends Component {
 		this.state = _.cloneDeep(initialState);
 	}
 	
+	componentDidUpdate( nextProps ){
+		if(nextProps.couples !== this.props.couples){
+			this.handleRestart();
+		}
+	}
+	
 	componentWillMount(){
-		this.setState({cardIds : this.generateCardIds(this.props.couples)});
+		this.setState({
+						  cardIds   : this.generateCardIds(this.props.couples),
+						  colorSalt : Math.floor(Math.random() * 360)
+					  });
 		setTimeout(() =>{
 			this.setState({showAll : false});
 		}, 1000);
@@ -60,7 +71,7 @@ export default class CardContainer extends Component {
 		
 	}
 	
-	bindCard( id, i ){
+	bindCard( id ){
 		return <Card show={this.handleShow(id)} onClick={this.onCardClick.bind(this, id)} key={id} color={this.generateColor(id)}></Card>;
 	}
 	
@@ -72,7 +83,7 @@ export default class CardContainer extends Component {
 		
 		let i    = id.substring(0, id.length - 1);
 		let step = 360 / this.props.couples;
-		let h    = step * i;
+		let h    = (step * i + this.state.colorSalt) % 360;
 		return `hsl(${h}, 70%, 50%)`;
 		
 	}

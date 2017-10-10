@@ -9,7 +9,7 @@ html, body {
 
 h1 {
 	padding: 20px 0 10px;
-	.color-anim{
+	.color-anim {
 		animation: colors 3s infinite;
 	}
 }
@@ -22,6 +22,8 @@ h1 + h2 {
 
 h6 {
 	padding-bottom: 20px;
+	font-size: 14px;
+	font-weight: 500;
 	color: #999999 !important;
 }
 
@@ -57,8 +59,8 @@ h6 {
 		}
 	}
 
-	&:hover{
-		&:after{
+	&:hover {
+		&:after {
 			animation: colors 3s infinite;
 			background: #F8F8F8;
 		}
@@ -70,16 +72,56 @@ h6 {
 	padding-bottom: 200px;
 }
 
+.couple-input {
+	padding-bottom: 10px;
+	color: #999999 !important;
+	font-size: 14px;
+	font-weight: 500;
+
+	input {
+		border: 1px solid #999999;
+		border-radius: 3px;
+		margin-left: 4px;
+		width: 50px;
+		padding: 3px 7px;
+		&::placeholder {
+			color: #999999 !important;
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
+
+	button {
+		-webkit-appearance: none;
+		color: white;
+		padding: 3px 7px;
+		margin-left: 5px;
+		background-color: cornflowerblue;
+		border: none;
+		transition: .3s;
+		border-radius: 3px;
+
+		&:hover {
+			background-color: #4567A4;
+		}
+
+	}
+
+}
+
 .win-modal {
 
 	height: 300px;
 	width: 80%;
 	position: fixed;
 	top: calc(50vh - 150px);
-	left: 10%;
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
 	align-items: center;
+	max-width: 600px;
 	text-align: center;
+	border: 1px solid #A0A0A0;
 	border-radius: 3px;
 	background: #EEEEEE;
 	justify-content: center;
@@ -95,7 +137,13 @@ h6 {
 		padding: 10px 40px;
 		background-color: cornflowerblue;
 		border: none;
+		transition: .3s;
 		border-radius: 3px;
+
+		&:hover {
+			background-color: #4567A4;
+		}
+
 	}
 
 }
