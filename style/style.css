@@ -7,10 +7,13 @@ html, body {
 
 h1 {
   padding: 20px 0 10px; }
+  h1 .color-anim {
+    animation: colors 3s infinite; }
 
 h1 + h2 {
   padding-bottom: 60px;
-  font-size: 20px; }
+  font-size: 20px;
+  max-width: 470px; }
 
 h6 {
   padding-bottom: 20px;
@@ -18,16 +21,21 @@ h6 {
 
 .single-memory-card {
   height: 200px;
-  border: 1px solid #000000;
+  border: 1px solid #A0A0A0;
   border-radius: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   cursor: pointer;
   position: relative;
   overflow: hidden; }
   .single-memory-card:after {
     height: 100%;
     width: 100%;
-    content: '';
+    content: '?';
+    font-family: serif;
+    text-align: center;
+    font-size: 72px;
+    line-height: 200px;
+    color: #A0A0A0;
     position: absolute;
     top: 0;
     left: 0;
@@ -35,6 +43,12 @@ h6 {
     background: #EEEEEE; }
   .single-memory-card.show:after {
     transform: translateY(-100%); }
+  .single-memory-card:hover:after {
+    animation: colors 3s infinite;
+    background: #F8F8F8; }
+
+.cards-container {
+  padding-bottom: 200px; }
 
 .win-modal {
   height: 300px;
@@ -58,5 +72,209 @@ h6 {
     background-color: cornflowerblue;
     border: none;
     border-radius: 3px; }
+
+@keyframes colors {
+  0% {
+    color: #d92626; }
+  1% {
+    color: #d93126; }
+  2% {
+    color: #d93c26; }
+  3% {
+    color: #d94626; }
+  4% {
+    color: #d95126; }
+  5% {
+    color: #d95c26; }
+  6% {
+    color: #d96726; }
+  7% {
+    color: #d97126; }
+  8% {
+    color: #d97c26; }
+  9% {
+    color: #d98726; }
+  10% {
+    color: #d99126; }
+  11% {
+    color: #d99c26; }
+  12% {
+    color: #d9a726; }
+  13% {
+    color: #d9b126; }
+  14% {
+    color: #d9bc26; }
+  15% {
+    color: #d9c726; }
+  16% {
+    color: #d9d226; }
+  17% {
+    color: #d5d926; }
+  18% {
+    color: #cad926; }
+  19% {
+    color: #c0d926; }
+  20% {
+    color: #b5d926; }
+  21% {
+    color: #aad926; }
+  22% {
+    color: #a0d926; }
+  23% {
+    color: #95d926; }
+  24% {
+    color: #8ad926; }
+  25% {
+    color: #80d926; }
+  26% {
+    color: #75d926; }
+  27% {
+    color: #6ad926; }
+  28% {
+    color: #5fd926; }
+  29% {
+    color: #55d926; }
+  30% {
+    color: #4ad926; }
+  31% {
+    color: #3fd926; }
+  32% {
+    color: #35d926; }
+  33% {
+    color: #2ad926; }
+  34% {
+    color: #26d92d; }
+  35% {
+    color: #26d938; }
+  36% {
+    color: #26d943; }
+  37% {
+    color: #26d94e; }
+  38% {
+    color: #26d958; }
+  39% {
+    color: #26d963; }
+  40% {
+    color: #26d96e; }
+  41% {
+    color: #26d978; }
+  42% {
+    color: #26d983; }
+  43% {
+    color: #26d98e; }
+  44% {
+    color: #26d998; }
+  45% {
+    color: #26d9a3; }
+  46% {
+    color: #26d9ae; }
+  47% {
+    color: #26d9b9; }
+  48% {
+    color: #26d9c3; }
+  49% {
+    color: #26d9ce; }
+  50% {
+    color: #26d9d9; }
+  51% {
+    color: #26ced9; }
+  52% {
+    color: #26c3d9; }
+  53% {
+    color: #26b9d9; }
+  54% {
+    color: #26aed9; }
+  55% {
+    color: #26a3d9; }
+  56% {
+    color: #2698d9; }
+  57% {
+    color: #268ed9; }
+  58% {
+    color: #2683d9; }
+  59% {
+    color: #2678d9; }
+  60% {
+    color: #266ed9; }
+  61% {
+    color: #2663d9; }
+  62% {
+    color: #2658d9; }
+  63% {
+    color: #264ed9; }
+  64% {
+    color: #2643d9; }
+  65% {
+    color: #2638d9; }
+  66% {
+    color: #262dd9; }
+  67% {
+    color: #2a26d9; }
+  68% {
+    color: #3526d9; }
+  69% {
+    color: #3f26d9; }
+  70% {
+    color: #4a26d9; }
+  71% {
+    color: #5526d9; }
+  72% {
+    color: #5f26d9; }
+  73% {
+    color: #6a26d9; }
+  74% {
+    color: #7526d9; }
+  75% {
+    color: #8026d9; }
+  76% {
+    color: #8a26d9; }
+  77% {
+    color: #9526d9; }
+  78% {
+    color: #a026d9; }
+  79% {
+    color: #aa26d9; }
+  80% {
+    color: #b526d9; }
+  81% {
+    color: #c026d9; }
+  82% {
+    color: #ca26d9; }
+  83% {
+    color: #d526d9; }
+  84% {
+    color: #d926d2; }
+  85% {
+    color: #d926c7; }
+  86% {
+    color: #d926bc; }
+  87% {
+    color: #d926b1; }
+  88% {
+    color: #d926a7; }
+  89% {
+    color: #d9269c; }
+  90% {
+    color: #d92691; }
+  91% {
+    color: #d92687; }
+  92% {
+    color: #d9267c; }
+  93% {
+    color: #d92671; }
+  94% {
+    color: #d92667; }
+  95% {
+    color: #d9265c; }
+  96% {
+    color: #d92651; }
+  97% {
+    color: #d92646; }
+  98% {
+    color: #d9263c; }
+  99% {
+    color: #d92631; }
+  100% {
+    color: #d92626; } }
 
 /*# sourceMappingURL=style.css.map */

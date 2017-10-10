@@ -9,11 +9,15 @@ html, body {
 
 h1 {
 	padding: 20px 0 10px;
+	.color-anim{
+		animation: colors 3s infinite;
+	}
 }
 
 h1 + h2 {
 	padding-bottom: 60px;
 	font-size: 20px;
+	max-width: 470px;
 }
 
 h6 {
@@ -24,9 +28,9 @@ h6 {
 .single-memory-card {
 
 	height: 200px;
-	border: 1px solid #000000;
+	border: 1px solid #A0A0A0;
 	border-radius: 3px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
@@ -34,7 +38,12 @@ h6 {
 	&:after {
 		height: 100%;
 		width: 100%;
-		content: '';
+		content: '?';
+		font-family: serif;
+		text-align: center;
+		font-size: 72px;
+		line-height: 200px;
+		color: #A0A0A0;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -48,6 +57,17 @@ h6 {
 		}
 	}
 
+	&:hover{
+		&:after{
+			animation: colors 3s infinite;
+			background: #F8F8F8;
+		}
+	}
+
+}
+
+.cards-container {
+	padding-bottom: 200px;
 }
 
 .win-modal {
@@ -78,4 +98,12 @@ h6 {
 		border-radius: 3px;
 	}
 
+}
+
+@keyframes colors {
+	@for $i from 0 through 100 {
+		#{$i}% {
+			color: hsl(($i * 3.6), 70%, 50%);
+		}
+	}
 }
