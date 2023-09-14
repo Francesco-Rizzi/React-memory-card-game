@@ -3,7 +3,7 @@
 ###### This is just an \[🔬 experiment\].
 
 #### Description:
- A React based version of the memory card game, flip the cards over and match the pairs with the fewer attempts as possible! [try it live](https://frarizzi.science/experiments/react-memory-card-game/)
+ A React based version of the memory card game, flip the cards over and match the pairs with the fewer attempts as possible!
 
  You have 10 couples of cards in different colors, you will see all them for a second and then they will be covered. You have to find the matches unveiling the cards with the same colors by recalling your memory.
 
